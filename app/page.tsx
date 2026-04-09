@@ -4,13 +4,14 @@
  */
 
 import { getProducts } from '@/lib/salesforce-api';
+import { Product } from '@/lib/types';
 import ProductCard from '@/components/ProductCard';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default async function HomePage() {
   // Fetch products server-side
-  let products;
+  let products: Product[] = [];
   let error: string | null = null;
 
   try {
